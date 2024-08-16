@@ -24,7 +24,7 @@ cv2.rectangle(blank,(0,0),(250,250),(0,255,0),thickness=2)
 cv2.imshow("rectangle",blank)#if we wanted a ractangle filled with green colour
                             #we would put thickness=-1
 
-#the parameters are respectively the image over which the triangle has to be
+#the parameters are respectively the image over which the rectangle has to be
 #,point1,point2,colour used,thickness
 
 #drawing a circle
