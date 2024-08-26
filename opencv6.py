@@ -20,16 +20,21 @@ cv2.imshow("blank image",blank)
 blur=cv2.GaussianBlur(gray,(7,7),cv2.BORDER_DEFAULT)
 cv2.imshow("blurred image",blur)
 
-canny=cv2.Canny(blur,125,175)
+canny=cv2.Canny(blur,125,175)#edge cascading
 cv2.imshow("edges cascaded",canny)
 
 #ret,thresh=cv2.threshold(gray,125,175,cv2.THRESH_BINARY)
 #cv2.imshow("thresh",thresh)
 
 contours,hierarchies=cv2.findContours(canny,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)
+#contours is a list here
+
 print(f"{len(contours)} found!")
 
 cv2.drawContours(blank,contours,-1,(0,0,255),1)
+#-1 here means that we want to draw all the contours in the image
+#1 is the thickness
+#a list is one of the arguments of the above funtion that is why we put contours
 
 cv2.imshow("contours drawn",blank)
 
